@@ -1,16 +1,12 @@
-// Login Form Elements
-const loginForm = document.getElementById('login-form');
-const usernameInput = document.getElementById('username-input');
-const passwordInput = document.getElementById('password-input');
-const loginButton = document.getElementById('login-button');
+function login() {
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
 
-// Login Button Click Handler
-loginButton.addEventListener('click', () => {
-  sendLoginRequest(usernameInput.value, passwordInput.value);
-});
-
-// Function to Send Login Request
-function sendLoginRequest(username, password) {
-  // TODO: Implement function to send login request to server
-  console.log(`Sending login request for username ${username} and password ${password}`);
+	// Check if username and password are correct
+	if (username === "default" && password === "default") {
+		// Redirect to another web page
+		window.location.href = "nextpage.html";//"https://example.com/dashboard";
+	} else {
+		alert("Invalid username or password. Please try again.");
+	}
 }
